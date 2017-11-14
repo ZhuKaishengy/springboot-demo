@@ -1,0 +1,16 @@
+#项目启动配置
+#项目基本配置（数据源）
+spring:
+  datasource:
+     db1:
+        username: SSO
+        password: SSO
+        driver-class-name: oracle.jdbc.driver.OracleDriver
+        url: jdbc:oracle:thin:@59.197.148.40:1521:orcl
+     db2:
+        username: sa
+        password: 'GL86P_\#'
+        driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+        url: jdbc:sqlserver://192.168.0.92:1433;DatabaseName=zksTest
+
+#第三方框架整合配置

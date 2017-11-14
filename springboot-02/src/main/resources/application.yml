@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    username: SSO
+    password: SSO
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@59.197.148.40:1521:orcl
