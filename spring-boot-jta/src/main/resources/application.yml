@@ -1,0 +1,14 @@
+#项目启动配置
+#项目基本配置（数据源）
+spring:
+  datasource:
+     db1:
+        username: SSO
+        password: SSO
+        url: jdbc:oracle:thin:@59.197.148.40:1521:orcl
+     db2:
+        username: JP
+        password: JP
+        url: jdbc:oracle:thin:@59.197.148.40:1521:orcl
+
+#第三方框架整合配置
