@@ -7,7 +7,20 @@ public class UserTest {
 
     private String password;
 
-    public String getUsername() {
+    
+    public UserTest() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public UserTest(String username, String userid, String password) {
+		super();
+		this.username = username;
+		this.userid = userid;
+		this.password = password;
+	}
+
+	public String getUsername() {
         return username;
     }
 
@@ -30,4 +43,10 @@ public class UserTest {
     public void setPassword(String password) {
         this.password = password == null ? null : password.trim();
     }
+
+	@Override
+	public String toString() {
+		return "UserTest [username=" + username + ", userid=" + userid + ", password=" + password + "]";
+	}
+    
 }

@@ -11,8 +11,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.aisino.db1.dao.UserTestMapper;
 import com.aisino.db1.domain.UserTest;
-import com.aisino.db2.dao.EmpMapper;
-import com.aisino.db2.domain.Emp;
+import com.aisino.db2.dao.JpTestMapper;
+import com.aisino.db2.domain.JpTest;
 
 import app.Application;
 
@@ -25,7 +25,7 @@ public class MultiMapperTest {
 	private UserTestMapper userTestMapper;
 	
 	@Autowired
-	private EmpMapper empMapper;
+	private JpTestMapper jpTestMapper;
 	
 	
 	@Test
@@ -35,16 +35,16 @@ public class MultiMapperTest {
 	}
 	
 	@Test
-	public void getEmps(){
-		List<Emp> emps = empMapper.selectByExample(null);
-		System.out.println(emps);
+	public void getJps(){
+		List<JpTest> list = jpTestMapper.selectByExample(null);
+		System.out.println(list);
 	}
 	
 	@Test
 	public void testTransaction(){
-		List<UserTest> list = userTestMapper.selectByExample(null);
-		List<Emp> emps = empMapper.selectByExample(null);
+		List<UserTest> users = userTestMapper.selectByExample(null);
+		List<JpTest> list = jpTestMapper.selectByExample(null);
+		System.out.println(users);
 		System.out.println(list);
-		System.out.println(emps);
 	}
 }
