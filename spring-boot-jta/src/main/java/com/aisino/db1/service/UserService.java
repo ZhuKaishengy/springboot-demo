@@ -2,7 +2,11 @@ package com.aisino.db1.service;
 
 import java.util.List;
 
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,6 +14,7 @@ import com.aisino.db1.dao.UserTestMapper;
 import com.aisino.db1.domain.UserTest;
 import com.aisino.db2.dao.JpTestMapper;
 import com.aisino.db2.domain.JpTest;
+
 
 @Service
 public class UserService {
@@ -20,6 +25,26 @@ public class UserService {
 	@Autowired
 	private JpTestMapper jpTestMapper;
 	
+	@Autowired
+	private CacheManager cacheManager;
+	
+	@Async
+	public void bigMethod(){
+		System.out.println("part 3");
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("part 4");
+	}
+	
+	public void clearCache(){
+		cacheManager.getCache("baseQueryCache").clear();
+	}
+	
+	@Cacheable("baseQueryCache")
 	public List<UserTest> getUsers(){
 		return userTestMapper.selectByExample(null);
 	}

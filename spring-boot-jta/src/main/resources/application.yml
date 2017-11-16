@@ -10,5 +10,9 @@ spring:
         username: JP
         password: JP
         url: jdbc:oracle:thin:@59.197.148.40:1521:orcl
+        
 
 #第三方框架整合配置
+  cache:
+    jcache:
+      config: classpath*:ehcache.xml

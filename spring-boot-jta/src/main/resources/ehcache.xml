@@ -1,0 +1,30 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xsi:noNamespaceSchemaLocation="../config/ehcache.xsd">  
+    <!--diskStore：缓存数据持久化的目录 地址  -->  
+    <diskStore path="C:\ehcache" />  
+    <defaultCache   
+        maxElementsInMemory="1000"   
+        maxElementsOnDisk="10000000"  
+        eternal="false"   
+        overflowToDisk="false"   
+        diskPersistent="false"  
+        timeToIdleSeconds="120"  
+        timeToLiveSeconds="120"   
+        diskExpiryThreadIntervalSeconds="120"  
+        memoryStoreEvictionPolicy="LRU">  
+    </defaultCache>
+    
+    <!-- timeToIdleSeconds 此属性设置后，限制时间以上次访问开始   
+        eg:设置时间为10分钟的话,我们在1分的时候账号被锁定,预定为10分时解锁.而我们在5分时再次输入密码（此时密码已被锁定，无论怎样都不会通过认证）,那么解锁时间变为15分.  
+         timeToLiveSeconds 此属性设置后，限制时间以缓存创建开始  
+        eg:设置时间为10分钟的话,我们在1分的时候账号被锁定,预定为10分时解锁.而我们在5分时再次输入密码（此时密码已被锁定，无论怎样都不会通过认证）,那么解锁时间还是10分.  
+          
+        maxBytesLocalHeap用来限制缓存所能使用的堆内存的最大字节数的,如果不设置则需设置另外一个属性,否则项目会编译出错,无法允许,此处不再详写。  
+         -->
+         
+    <cache name="baseQueryCache" eternal="false"    
+        timeToIdleSeconds="0" timeToLiveSeconds="600" overflowToDisk="false"    
+        maxBytesLocalHeap="10M" statistics="true">    
+    </cache>
+    
+</ehcache>

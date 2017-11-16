@@ -28,7 +28,7 @@ import oracle.jdbc.xa.client.OracleXADataSource;
  * @date 2017年11月14日
  */
 @Configuration
-@MapperScan(basePackages={"com.aisino.db1"},sqlSessionTemplateRef="sqlSessionTemplate1")
+@MapperScan(basePackages={"com.aisino.db1.dao"},sqlSessionTemplateRef="sqlSessionTemplate1")
 public class ApplicationContext_DataBase_First {
 
 	@Primary
