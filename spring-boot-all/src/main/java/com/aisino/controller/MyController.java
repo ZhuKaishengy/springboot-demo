@@ -13,5 +13,11 @@ public class MyController {
 		
 		return Msg.success();
 	}
+	
+	@RequestMapping("/ex")
+	public Msg testExceptionHandler(){
+		System.out.println(1/0);
+		return Msg.success();
+	}
 
 }

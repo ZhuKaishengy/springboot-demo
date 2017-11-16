@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>thymeleaf.html</title>
+  </head>
+  <body>
+    <span th:each="user:${users}">
+    	<span th:text="${user.id}">id</span><br></br>
+    	<span th:text="${user.name}">username</span><br></br>
+    	<span th:text="${user.age}">age</span><br></br>
+    	<span th:text="${user.createTime}">createTime</span><br></br>
+   		<span th:if="${user.id eq '1001'}">欢迎您：1001号</span><br></br>
+    	---------------------------<br></br>
+    </span>
+  </body>
+</html>

@@ -23,4 +23,28 @@ public class CommonController {
 		map.put("users", users);
 		return "template";
 	}
+	
+	@RequestMapping("/jspPage")
+	public String jspPage(Map<String , Object> map){
+		User user1 = new User("1001", "zks", 25, new Date());
+		User user2 = new User("1002", "sjx", 22, new Date());
+		List<User> users = new ArrayList<User>();
+		users.add(user1);
+		users.add(user2);
+		map.put("users", users);
+		return "jspPage";
+	}
+	
+	@RequestMapping("/thymeleaf")
+	public String thymeleaf(Map<String , Object> map){
+		User user1 = new User("1001", "zks", 25, new Date());
+		User user2 = new User("1002", "sjx", 22, new Date());
+		List<User> users = new ArrayList<User>();
+		users.add(user1);
+		users.add(user2);
+		map.put("users", users);
+		return "thymeleaf";
+	}
 }
+
+

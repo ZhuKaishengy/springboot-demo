@@ -26,11 +26,44 @@
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-freemarker</artifactId>
 		</dependency>
-		
+		<!-- spring-boot-starter-tomcat -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!-- jasper -->
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!-- jstl -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.1.2</version>
+		</dependency>
+		<!-- taglib -->
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>1.1.2</version>
+		</dependency>
+		<!-- spring-boot-starter-thymeleaf -->
+		<dependency>    
+            <groupId>org.springframework.boot</groupId>    
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>    
+		</dependency> 
 	</dependencies>
   
   <build>
     <plugins>
+    <!-- springboot maven plugin :使用maven build（spring-boot:run）启动springboot的springApplication  -->
+	<plugin>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-maven-plugin</artifactId>
+	</plugin>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
