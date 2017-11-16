@@ -13,4 +13,5 @@ public class MyController {
 		
 		return Msg.success();
 	}
+
 }
