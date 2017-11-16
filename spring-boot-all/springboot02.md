@@ -5,12 +5,12 @@
 	* eg<br><br>
 	![show02](https://github.com/ZhuKaishengy/StaticRepos/raw/master/img/show02.jpg "演示图片")
 	* 访问<br><br>
-	![show03](https://github.com/ZhuKaishengy/StaticRepos/raw/master/img/show03.jpg "演示图片")
+	![show03](https://github.com/ZhuKaishengy/StaticRepos/raw/master/img/show03.jpg "演示图片")<br><br>
 **2. spring-boot 加载页面**
 * spring-boot 推荐使用伪动态页面（模板）的方式展示页面，如：freemark等
 	* spring-boot 加载模板的默认路径src/main/resources/templates
 	* eg：以freemarker为例<br><br>
-	![show04](https://github.com/ZhuKaishengy/StaticRepos/raw/master/img/show04.jpg "演示图片")
+	![show04](https://github.com/ZhuKaishengy/StaticRepos/raw/master/img/show04.jpg "演示图片")<br><br>
 	* 添加spring-boot 整合freemarker的依赖包
 	```xml
 	 <!-- spring-boot-starter-freemarker -->
@@ -20,7 +20,7 @@
 	</dependency>
 	```
 	* 写一个controller，不是rest风格的，在请求域中加入user对象，在template.ftl中显示<br><br>
-	![show05](https://github.com/ZhuKaishengy/StaticRepos/raw/master/img/show05.jpg "演示图片")
+	![show05](https://github.com/ZhuKaishengy/StaticRepos/raw/master/img/show05.jpg "演示图片")<br><br>
 	* 编写ftl模板文件:遍历、判断
 	```xml
 	<#list users as user>
@@ -35,7 +35,7 @@
 	</#list>
 	```
 	* 启动项目，查看结果<br><br>
-	![show06](https://github.com/ZhuKaishengy/StaticRepos/raw/master/img/show06.jpg "演示图片")
+	![show06](https://github.com/ZhuKaishengy/StaticRepos/raw/master/img/show06.jpg "演示图片")<br><br>
 	
 	
 	
