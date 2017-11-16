@@ -1,6 +1,5 @@
-/.settings/  
 /target/  
-  
+
 # built application files  
 *.apk  
 *.ap_  
@@ -17,9 +16,7 @@ bin/
 gen/  
 
 # Eclipse project files  
-.classpath
 .metadata
-.project
 .DS_Store
 
 # IntelliJ idea files
@@ -75,3 +72,9 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
+
+
+/.settings/
+/.classpath
+/.project
+/Users/
