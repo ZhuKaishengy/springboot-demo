@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.aisino.dao.UserTestDao;
 import com.aisino.domain.UserJPA;
+import com.aisino.domain.mybatis.UserTestMybatis;
 import com.aisino.service.UserTestService;
 import com.aisino.to.Msg;
 
@@ -29,22 +30,33 @@ public class MyController {
 	/**
 	 * 一个简易的例子，不写service层了，直接注入dao
 	 */
-	@Autowired
-	private UserTestDao userTestDao;
+//	@Autowired
+//	private UserTestDao userTestDao;
 	
-	@RequestMapping("/insertUser")
-	public Msg insertUser(){
-		userTestDao.insertUser("zks", "zks");
-		return Msg.success();
-	}
-	
+//	@RequestMapping("/insertUser")
+//	public Msg insertUser(){
+//		userTestDao.insertUser("zks", "zks");
+//		return Msg.success();
+//	}
+//	
 	@Autowired
 	private UserTestService userTestService;
 	
-	@RequestMapping("/findUserById")
-	public Msg findUserById(){
-		List<UserJPA> list = userTestService.getById("1");
-		return Msg.success().add("users", list);
+//	@RequestMapping("/findUserById")
+//	public Msg findUserById(){
+//		List<UserJPA> list = userTestService.getById("1");
+//		return Msg.success().add("users", list);
+//	}
+	/**
+	 * @Description: 测试mybatis
+	 * @author zhukaisheng
+	 * @date 2017年11月17日
+	 */
+	@RequestMapping("/list")
+	public Msg list(){
+		
+		List<UserTestMybatis> list = userTestService.list();
+		return Msg.success().add("list", list);
 	}
 
 }

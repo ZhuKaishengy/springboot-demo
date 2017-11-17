@@ -146,5 +146,4 @@ public class MultiController {
 //	public Msg read3(){
 //		return Msg.success().add("config", config);
 //	}
-	
 }

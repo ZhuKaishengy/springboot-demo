@@ -11,3 +11,8 @@ spring:
     password: SSO
     driver-class-name: oracle.jdbc.driver.OracleDriver
     url: jdbc:oracle:thin:@59.197.148.40:1521:orcl
+
+mybatis:
+  type-aliases-package: com.aisino.domain.mybatis
+  mapper-locations:
+    - classpath:mapper/*.xml

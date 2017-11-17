@@ -34,17 +34,17 @@ public class MultiMapperTest {
 		System.out.println(list);
 	}
 	
-	@Test
-	public void getJps(){
-		List<JpTest> list = jpTestMapper.selectByExample(null);
-		System.out.println(list);
-	}
+//	@Test
+//	public void getJps(){
+//		List<JpTest> list = jpTestMapper.selectByExample(null);
+//		System.out.println(list);
+//	}
 	
-	@Test
-	public void testTransaction(){
-		List<UserTest> users = userTestMapper.selectByExample(null);
-		List<JpTest> list = jpTestMapper.selectByExample(null);
-		System.out.println(users);
-		System.out.println(list);
-	}
+//	@Test
+//	public void testTransaction(){
+//		List<UserTest> users = userTestMapper.selectByExample(null);
+//		List<JpTest> list = jpTestMapper.selectByExample(null);
+//		System.out.println(users);
+//		System.out.println(list);
+//	}
 }

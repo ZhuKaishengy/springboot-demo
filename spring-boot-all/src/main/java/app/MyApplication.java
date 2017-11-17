@@ -1,5 +1,6 @@
 package app;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -11,8 +12,9 @@ import com.aisino.dao.UserTestDao;
 
 @EnableAutoConfiguration
 @ComponentScan(basePackages="com.aisino")
-@EnableJpaRepositories(basePackages={"com.aisino.dao"})
-@EntityScan(basePackages={"com.aisino.domain"})
+//@EnableJpaRepositories(basePackages={"com.aisino.dao"})
+//@EntityScan(basePackages={"com.aisino.domain"})
+@MapperScan(basePackages={"com.aisino.dao.mybatis"})
 public class MyApplication {
 
 	/**
@@ -20,10 +22,10 @@ public class MyApplication {
 	 * @author zhukaisheng
 	 * @date 2017年11月16日
 	 */
-	@Bean
-	private UserTestDao userTestDao(){
-		return new UserTestDao();
-	}
+//	@Bean
+//	private UserTestDao userTestDao(){
+//		return new UserTestDao();
+//	}
 	
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(MyApplication.class, args);

@@ -1,6 +1,17 @@
+#用来动态切换项目环境
+spring:
+  profiles:
+    active:
+      - dev
+---
 #项目启动配置
+server:
+  context-path: /
+  port: 8080
+
 #项目基本配置（数据源）
 spring:
+  profiles: dev
   datasource:
      db1:
         username: SSO
@@ -16,3 +27,4 @@ spring:
   cache:
     jcache:
       config: classpath*:ehcache.xml
+

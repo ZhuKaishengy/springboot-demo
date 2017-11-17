@@ -13,3 +13,4 @@
 * [spring-boot 获取配置文件](springboot-async.md)
 * [spring-boot 多环境分析](springboot-async.md)
 * [spring-boot 项目打包](springboot-async.md)
+* [详细讲解spring-boot项目如何打包](springboot-package.md)
