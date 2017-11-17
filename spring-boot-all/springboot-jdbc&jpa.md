@@ -3,7 +3,7 @@
 **2. jdbcTemplate 提供的方式是没有dao，使用jdbcTemplate访问数据库，直接@autowired jdbcTemplate就可以，spring-boot帮我们注入了**
 **3. jpa 提供的方式是继承jpaRepository接口访问数据库，使用注解 @EnableJpaRepositories(basePackages={"com.aisino.dao"})扫描dao，
 	@EntityScan(basePackages="com.aisino.domain")扫描实体类
-**4. mybatis 通过配置application.yml，配置mapper文件的位置mapper-locations和domain的位置：type-aliases-package，dao层的mapper接口通过@mapperScan扫描得到
+**4. mybatis 通过配置application.yml，配置mapper文件的位置mapper-locations和domain的位置：type-aliases-package;dao层的mapper接口通过@mapperScan扫描得到
 #### spring-boot 整合jdbc-template
 **1. 加入maven的依赖包**
 ```xml
@@ -92,3 +92,52 @@
     url: jdbc:oracle:thin:@59.197.148.40:1521:orcl
 ```
 **3. 调用jpa提供的方法访问数据库**
+* domain层
+```java
+@Entity(name="USER_TEST")
+public class UserJPA {
+
+	@Id
+	private String userId;
+	@Column(name="USERNAME")
+	private String username;
+	@Column(name="PASSWORD")
+	private String passwd;
+	
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPasswd() {
+		return passwd;
+	}
+	public void setPasswd(String passwd) {
+		this.passwd = passwd;
+	}
+}
+```
+* dao层
+```java
+public interface UserTestDaoJpa extends JpaRepository<UserJPA, String>{
+	@Query("select * from USER_TEST where userId = ?1")
+	public UserJPA findById(String id);
+}
+```
+* service层调用dao：参见UserTestService.java
+* controller层：参见MyController.java中的findUserById()
+* spring-boot启动类
+```java
+@EnableAutoConfiguration
+@ComponentScan(basePackages="com.aisino")
+@EnableJpaRepositories(basePackages={"com.aisino.dao"})
+@EntityScan(basePackages={"com.aisino.domain"})
+public class MyApplication {
+```

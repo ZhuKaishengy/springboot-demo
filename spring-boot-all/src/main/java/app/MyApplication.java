@@ -2,13 +2,17 @@ package app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.aisino.dao.UserTestDao;
 
 @EnableAutoConfiguration
 @ComponentScan(basePackages="com.aisino")
+@EnableJpaRepositories(basePackages={"com.aisino.dao"})
+@EntityScan(basePackages={"com.aisino.domain"})
 public class MyApplication {
 
 	/**

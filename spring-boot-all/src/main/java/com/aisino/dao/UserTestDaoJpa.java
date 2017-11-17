@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.Query;
 import com.aisino.domain.UserJPA;
 
 public interface UserTestDaoJpa extends JpaRepository<UserJPA, String>{
-	@Query("select * from USER_TEST where userId = ?1")
-	public UserJPA findById(String id);
+//	@Query("select * from USER_TEST where USERID = ?0")
+//	public UserJPA findById(String id);
 }
